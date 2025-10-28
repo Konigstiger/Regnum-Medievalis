@@ -1,0 +1,11 @@
+### Sora Prompt – Currency Icon Renders
+
+Render six medieval currency icons on white or transparent background:
+1. Western Europe: Crown 👑
+2. Northern Europe: Mark ɱ
+3. Eastern Christian: Bezant ʙ
+4. Islamic Realms: Dinar د
+5. Indian Subcontinent: Rupee ₹
+6. Far East: Tael 兩
+
+Style: high-resolution, clean slicing for mobile UI, consistent lighting.

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Council Dispute",
+    "description": "Two nobles argue over land inheritance.",
+    "choices": ["Respect tradition", "Favor innovation"],
+    "effects": { "stability": -5, "treasury": +100 }
+  },
+  {
+    "id": 2,
+    "name": "Trade Boom",
+    "description": "Merchants report great profits from the Silk Road.",
+    "choices": ["Increase tariffs", "Encourage trade"],
+    "effects": { "treasury": +200, "stability": +5 }
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "taxRate": 0.15,
+  "advisorSalaries": 200,
+  "armyMaintenance": 300,
+  "buildingUpkeep": 150,
+  "inflationDampener": true
+}
