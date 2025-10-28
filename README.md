@@ -1,3 +1,6 @@
+![.NET Build and Test](https://github.com/Konigstiger/Regnum-Medievalis/actions/workflows/dotnet.yml/badge.svg)
+
+
 # Regnum Medievalis
 
 A medieval strategy and council simulation game for mobile and tablet.
