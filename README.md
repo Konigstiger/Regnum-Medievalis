@@ -1,4 +1,4 @@
-![.NET Build and Test](https://github.com/Konigstiger/Regnum-Medievalis/actions/workflows/dotnet.yml)
+![.NET Build and Test](https://github.com/Konigstiger/Regnum-Medievalis/actions/workflows/dotnet-desktop.yml)
 
 
 # Regnum Medievalis
