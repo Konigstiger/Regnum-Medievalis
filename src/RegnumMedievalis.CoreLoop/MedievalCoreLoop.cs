@@ -1,24 +1,33 @@
 using System;
-using System.Collections.Generic;
 
 namespace RegnumMedievalis.CoreLoop
 {
     public class MedievalCoreLoop
     {
-        private int year = 1100;
-        private Random rng = new Random();
-        public double Treasury { get; private set; } = 1000;
-        public double Stability { get; private set; } = 100;
+        private readonly Random _rng;
+        private int _year = 1100;
+
+        public double Treasury { get; private set; } = 1000.0;
+        public double Stability { get; private set; } = 100.0;
+
+        public MedievalCoreLoop(int? seed = null)
+        {
+            _rng = seed.HasValue ? new Random(seed.Value) : new Random();
+        }
 
         public void RunTurn()
         {
-            Console.WriteLine($"\nYear {year}: Council convenes...");
-            double income = rng.Next(100, 300);
-            double expense = rng.Next(80, 250);
-            Treasury += income - expense;
-            Stability += rng.Next(-5, 6);
-            year++;
-            Console.WriteLine($"Income: {income}, Expense: {expense}, Treasury: {Treasury:F2}, Stability: {Stability}%");
+            // Simple economic delta
+            var income = 100 + _rng.Next(-20, 21);   // 80..120
+            var expenses = 90 + _rng.Next(-25, 26);  // 65..115
+
+            Treasury += (income - expenses);
+
+            // Stability shifts slightly, never below 0
+            Stability += _rng.Next(-5, 6);           // -5..+5
+            if (Stability < 0) Stability = 0;
+
+            _year += 1;
         }
     }
 }

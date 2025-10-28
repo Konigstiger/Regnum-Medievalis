@@ -7,25 +7,27 @@ namespace RegnumMedievalis.CoreLoop
         static void Main(string[] args)
         {
             Console.WriteLine("Regnum Medievalis – Core Simulation");
-            var game = new MedievalCoreLoop();
+            Console.WriteLine("Choose mode: [1] Interactive  [2] Automated");
+            var input = Console.ReadLine();
 
-            Console.WriteLine("\nChoose mode: [1] Interactive [2] Automated Simulation");
-            var choice = Console.ReadLine();
-
-            if (choice == "2")
+            var loop = new MedievalCoreLoop();
+            if (input == "2")
             {
-                Console.WriteLine("Running 10 automated turns...\n");
-                for (int i = 0; i < 10; i++) game.RunTurn();
-                Console.WriteLine("\nSimulation complete.");
-            }
-            else
-            {
-                while (true)
+                for (int i = 0; i < 10; i++)
                 {
-                    game.RunTurn();
-                    Console.WriteLine("Press [Enter] for next year or type 'exit' to quit.");
-                    if (Console.ReadLine()?.ToLower() == "exit") break;
+                    loop.RunTurn();
+                    Console.WriteLine($"Turn {i+1:00}  Treasury={loop.Treasury:0.##}  Stability={loop.Stability:0.##}");
                 }
+                return;
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Press ENTER to run a turn (or type 'q' to quit).");
+                var line = Console.ReadLine();
+                if (line?.Trim().ToLowerInvariant() == "q") break;
+                loop.RunTurn();
+                Console.WriteLine($"Treasury={loop.Treasury:0.##}  Stability={loop.Stability:0.##}");
             }
         }
     }
